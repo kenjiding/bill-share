@@ -1,0 +1,29 @@
+<script>
+  fetch('http://192.168.1.105:8080/auth/register', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      phone: '0421259277',
+      password: '123456',
+      username: 'kenji',
+      confirmPassword: '123456',
+      email: 'aaabb@gmail.com',
+      role: 'tenant',
+      propertyInfo: {
+        address: 'hahahah',
+        state: 'SA',
+        code: '5000',
+        city: 'Adelaide',
+        propertyPhotos: [],
+      },
+      idCardImages: [],
+      faceImages: []
+    }),
+  })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+
+</script>
